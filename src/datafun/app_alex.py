@@ -1,29 +1,3 @@
-"""src/datafun/app_case.py - Project script (example).
-
-Author: Denise Case
-Date: 2026-05
-
-  Practice key Python skills related to:
-    - imports
-    - logging
-    - variables
-    - type hints
-    - global constants
-    - f-strings
-    - functions
-    - main function
-    - conditional execution guard
-
-Terminal command to run this file from the root project folder
-
-    uv run python -m datafun.app_case
-
-OBS:
-  Don't edit this file - it should remain a working example.
-  Copy it, rename it, and modify your copy.
-"""
-
-
 # === DECLARE IMPORTS (BRING IN FREE CODE) ===
 
 import logging
@@ -31,6 +5,7 @@ import statistics
 from typing import Final
 
 from datafun_toolkit.logger import get_logger, log_header
+from matplotlib import pyplot as plt
 
 # === CONFIGURE LOGGER ONCE PER MODULE (PYTHON FILE) ===
 
@@ -117,6 +92,13 @@ def get_statistics() -> str:
 
     LOG.info("Generated formatted multi-line SUMMARY string.")
     LOG.info("Returning the str to the calling function.")
+    # add a plot where the data is defined and then log that the plot was generated
+    plt.scatter(range(len(snowfall_inches)), snowfall_inches)
+    plt.title("Snowfall Measurements")
+    plt.xlabel("Measurement Index")
+    plt.ylabel("Snowfall (inches)")
+    plt.savefig("snowfall_plot.png")
+    LOG.info("Generated and saved a plot of snowfall measurements.")
     return summary
 
 
