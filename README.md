@@ -92,7 +92,7 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/datafun-01-foundations
+git clone https://github.com/ajaneh/datafun-01-foundations
 
 cd datafun-01-foundations
 code .
@@ -118,6 +118,7 @@ uvx pre-commit run --all-files
 
 # run the module
 uv run python -m datafun.app_case
+uv run python -m datafun.app_alex
 
 # do chores
 uv run ruff format .
